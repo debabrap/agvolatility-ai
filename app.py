@@ -4,7 +4,10 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="AgVolatility AI", layout="wide")
+st.set_page_config(
+    page_title="Enterprise Commodity Risk Intelligence",
+    layout="wide"
+)
 
 FEATURES_PATH = os.path.join("features", "all_commodities_volatility_features.csv")
 
@@ -222,4 +225,5 @@ with portfolio_right:
     if highest_risk["Vol_30d_annual"] > 0.25:
         st.error("Action: Trigger Procurement Risk Review")
     else:
+
         st.success("Portfolio Risk Within Acceptable Range")
